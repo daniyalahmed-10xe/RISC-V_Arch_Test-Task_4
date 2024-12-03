@@ -1,22 +1,21 @@
 # <center> RISC-V Arch Test </center>
 
-## *<center> Implementation of Task 3 </center>*
+## *<center> Implementation of Task 4 </center>*
 
 #### Question Statement:
 
-###### *Write an assembly test to handle exceptions in S mode*
+###### *Write an assembly test to check mstatus.FS and mstatus.SD behavior*
 
 1. Assembly test:
-	- Start your test in M mode and then switch to U mode.
-	- Implement a trap handler for S mode to handle exceptions.
-	- Generate an illegal instruction exception and handle this exception in S mode (all the exceptions are by default handled in M mode).
+	- Write a test to check the mstatus.FS filed (OFF, CLEAN and DIRTY) (How can you check mstatus.SD field using mstatus.FS? Figure out yourself).
+	- The test should be self checking.
 
 #### Build & Run:
 
 ###### *Compile Assembly File to Elf:*
 
 ```shell
-riscv64-unknown-elf-gcc -march=rv32g -mabi=ilp32 -nostdlib -T link.ld task3.S -o test.elf
+riscv64-unknown-elf-gcc -march=rv32g -mabi=ilp32 -nostdlib -T link.ld task4.S -o test.elf
 ```
 ###### *Create a Disassembly:*
 
@@ -44,7 +43,7 @@ riscv_sim_RV32 test.elf --trace=step 2> sail.out 1> sail.log
 			background: rgb(228, 228, 228);
 			padding: 4px 12px;
 			border-radius: 10px"
-		> /Code/task3.S
+		> /Code/task4.S
 	</span>
 
 ###### *Log Files Available at:*
@@ -69,7 +68,7 @@ riscv_sim_RV32 test.elf --trace=step 2> sail.out 1> sail.log
 			background: rgb(228, 228, 228);
 			padding: 4px 12px;
 			border-radius: 10px"
-		> /Report/RISC-V_Arch_Test_Task_3_Report.docx
+		> /Report/RISC-V_Arch_Test_Task_4_Report.docx
 	</span>
 
 ###### *Output Screenshots Available at:*
